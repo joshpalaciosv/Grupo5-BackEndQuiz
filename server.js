@@ -8,14 +8,14 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Example endpoint for fetching
+// Creamos el EndPoint General para el Quiz
 app.get('/api/quiz', (req, res) => {
     res.json([
-        { question: 'Seleccione el tema principal', options: ['HTML', 'JavaScript', 'CSS', 'Bootstrap'], answer: 'HTML' }
+        { title: 'Seleccione el tema principal', options: ['HTML', 'JavaScript', 'CSS', 'Bootstrap']}
     ]);
 });
 
-// Preguntas para HTML
+// EndPoint Preguntas para HTML
 app.get('/api/html/quiz', (req, res) => {
     res.json([
         { question: '¿Qué etiqueta se usa para crear un enlace en HTML?', options: ['<link>', '<a>', '<href>', '<anchor>'], answer: '<a>' },
@@ -32,7 +32,7 @@ app.get('/api/html/quiz', (req, res) => {
 });
 
 
-// Preguntas para JavaScript
+// EndPoint Preguntas para JavaScript
 app.get('/api/javascript/quiz', (req, res) => {
     res.json([
         { question: '¿Cuál es el método para convertir una cadena a mayúsculas?', options: ['toUpperCase()', 'toLowerCase()', 'toUpper()', 'convertToUpper()'], answer: 'toUpperCase()' },
@@ -49,7 +49,7 @@ app.get('/api/javascript/quiz', (req, res) => {
 });
 
 
-// Preguntas para CSS
+// EndPoint Preguntas para CSS
 app.get('/api/css/quiz', (req, res) => {
     res.json([
         { question: '¿Cómo defines una clase en CSS?', options: ['.className', '#className', 'class.className', '<className>'], answer: '.className' },
@@ -66,7 +66,7 @@ app.get('/api/css/quiz', (req, res) => {
 });
 
 
-// Preguntas para Bootstrap
+// EndPoint Preguntas para Bootstrap
 app.get('/api/bootstrap/quiz', (req, res) => {
     res.json([
         { question: '¿Cómo defines un contenedor que ocupa todo el ancho en Bootstrap?', options: ['container-fluid', 'container-full', 'container-lg', 'container-max'], answer: 'container-fluid' },
@@ -82,7 +82,7 @@ app.get('/api/bootstrap/quiz', (req, res) => {
     ]);
 });
 
-
+//el Servidor escucha en el puerto indicado
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
